@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get("/login", async (req,res)=>{
     const authCodeUrlParameters = {
         scopes: ["user.read"],
-        redirectUri: "https://au-scholarships.netlify.app/auth/microsoft/callback" // This should be the same as the redirect URI you set in Azure AD app registration
+        redirectUri: "https://scholarships-zh1p.onrender.com/auth/microsoft/callback"  // This should be the same as the redirect URI you set in Azure AD app registration
     }
 
     const response = await cca.getAuthCodeUrl(authCodeUrlParameters);
@@ -29,7 +29,7 @@ router.get("/auth/microsoft/callback", async (req,res) => {
     const tokenRequest = {
         code: req.query.code,
         scopes: ["user.read"],
-        redirectUri: "https://au-scholarships.netlify.app/auth/microsoft/callback" // This should be the same as the redirect URI you set in Azure AD app registration
+        redirectUri: "https://scholarships-zh1p.onrender.com/auth/microsoft/callback" // This should be the same as the redirect URI you set in Azure AD app registration
     }
 
     const response = await cca.acquireTokenByCode(tokenRequest)
