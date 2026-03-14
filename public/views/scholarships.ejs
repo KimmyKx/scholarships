@@ -1,0 +1,42 @@
+<%- contentFor('head') %>
+    <title>Scholarships - Aletheia University</title>
+    <style>
+        li.list-group-item {
+            padding: 20px;
+        }
+    </style>
+<%- contentFor('body') %>
+    <br>
+    <div class="content" style="width: 100vw; max-width: 700px;">
+        <h1>Scholarships list</h1>
+        <ul class="list-group list-group-flush scholarships-list">
+            <a href="#" class="text-decoration-none text-secondary"><li class="list-group-item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime, aspernatur!</li></a>
+            <a href="#" class="text-decoration-none text-secondary"><li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas</li></a>
+            <a href="#" class="text-decoration-none text-secondary"><li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia laudantium tenetur ipsum.</li></a>
+            <a href="#" class="text-decoration-none text-secondary"><li class="list-group-item">Lorem ipsum dolor sit amet.</li></a>
+            <a href="#" class="text-decoration-none text-secondary"><li class="list-group-item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium beatae eum voluptatum laboriosam provident. Ipsum!</li></a>
+            <a href="#" class="text-decoration-none text-secondary"><li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum.</li></a>
+            <a href="#" class="text-decoration-none text-secondary"><li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia laudantium tenetur ipsum.</li></a>
+        </ul>
+    </div>
+<%- contentFor('footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const scholarshipItems = document.querySelectorAll('ul.scholarships-list a');
+        scholarshipItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Scholarship Details',
+                    html: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque.</p><p><strong>Eligibility:</strong> Lorem ipsum dolor sit amet.</p><p><strong>Deadline:</strong> 2024-12-31</p>',
+                    icon: 'info',
+                    showCancelButton: true,
+                    confirmButtonText: 'Apply'
+                });
+            });
+        });
+    </script>
+    
+   
+    
+    

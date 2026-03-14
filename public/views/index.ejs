@@ -1,0 +1,9 @@
+<% contentFor('body') %>
+    <br>
+    <% if(!user) { %>
+    <a href="/login" class="btn btn-primary">Login to Dashboard</a>
+    <% } else { %>
+    <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+    <br>
+    <a href="/logout" class="btn btn-danger">Logout</a>
+    <% } %>

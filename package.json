@@ -1,0 +1,28 @@
+{
+  "name": "scholarship",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon . --ignore \"public/*\"",
+    "start": "node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@azure/msal-node": "^5.1.0",
+    "axios": "^1.13.6",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.3.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-fileupload": "^1.5.2",
+    "express-session": "^1.19.0",
+    "nodemon": "^3.1.14",
+    "passport": "^0.7.0",
+    "passport-azure-ad": "^4.3.5",
+    "pretty-ms": "^9.3.0"
+  }
+}

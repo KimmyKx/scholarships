@@ -1,0 +1,26 @@
+<%- contentFor('head') %>
+    <title>Dashboard - Aletheia University</title>
+
+<%- contentFor('body') %>
+    <br>
+    <div class="content" style="width: 100vw; max-width: 700px;">
+        <h1 style="align-self: start; margin-left: -20px;">Welcome <%- user.name %>!</h1>
+        <div class="d-flex flex-wrap gap-3">
+            <a href="/user/<%= user.username.split('@')[0] %>" class="text-decoration-none">
+                <div class="card border-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa-solid fa-user-gear"></i> Account Management</h5>
+                        <p class="card-text">Manage your account settings and preferences.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/scholarships" class="text-decoration-none">
+                <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fa-solid fa-scroll"></i> Scholarships</h5>
+                        <p class="card-text">View and manage your scholarship applications.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>

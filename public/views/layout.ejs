@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/978f66dec6.js" crossorigin="anonymous" defer></script>
+    <%- defineContent('head') %>
+    <title>Aletheia University</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/images/au_logo.png" alt="Logo" width="40" height="35" class="d-inline-block align-text-top">
+                真理大學
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            School Info
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">About School</a></li>
+                            <li><a class="dropdown-item" href="#">Academic Programs</a></li>
+                            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <span class="navbar-text">
+                <% if(!user) { %>
+                    <a href="/login" style="font-size: 2rem;"><i class="fa-regular fa-circle-user"></i></a>
+                    <% } else { %>
+                    <div class="d-flex flex-column">
+                        <a href="/dashboard" class="link-opacity-10-hover link-offset-2 link-underline link-underline-opacity-0" style="font-size: 18px;"><%= user.name %></a>
+                        <span style="font-size: 15px;"><%= user.username %></span>
+                    </div>
+                <% } %>
+            </span>
+        </div>
+    </nav>
+    <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+        <%- defineContent('body') %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <%- defineContent('footer') %>
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
